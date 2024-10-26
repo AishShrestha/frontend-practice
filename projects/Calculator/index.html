@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ 
+</head>
+<body>
+ <div class="container">
+    
+    <div class="output">
+
+    </div>
+ 
+    <div class="input">
+        <button class="calcButton signButton" id="clear" onclick="clearDisplay()">C</button>
+        <button class="calcButton signButton" onclick="deleteNumber()"><i class="fas fa-backspace"></i></button>
+        <button class="calcButton signButton" onclick="setOperation('/')">/</button>
+        <button class="calcButton signButton" onclick="setOperation('*')">x</button>
+        <button class="calcButton" onclick="appendNumber('7')">7</button>
+        <button class="calcButton" onclick="appendNumber('8')">8</button>
+        <button class="calcButton" onclick="appendNumber('9')">9</button>
+        <button class="calcButton signButton" onclick="setOperation('-')">-</button> 
+        <button class="calcButton" onclick="appendNumber('4')">4</button>
+        <button class="calcButton" onclick="appendNumber('5')">5</button>
+        <button class="calcButton" onclick="appendNumber('6')">6</button>
+        <button class="calcButton signButton" onclick="setOperation('+')">+</button>
+        <button class="calcButton" onclick="appendNumber('1')">1</button>
+        <button class="calcButton" onclick="appendNumber('2')">2</button>
+        <button class="calcButton" onclick="appendNumber('3')">3</button>
+        <button id="equalButton" onclick="calculate()">=</button>
+        <button class="calcButton" onclick="appendNumber('00')">00</button>
+        <button class="calcButton" onclick="appendNumber('0')">0</button>
+        <button class="calcButton signButton" onclick="appendNumber('.')">.</button>
+    
+    </div>
+ </div>
+ <script src="calc.js"></script>
+</body>
+</html>
