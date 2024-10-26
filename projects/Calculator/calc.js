@@ -3,12 +3,15 @@ const output  = document.querySelector('.output');
 let currentNumber = '';
 let previousNumber = '';
 let operation = null;
+let display = '';
 
 //function to add digit to the current input and display
 const appendNumber = (number) =>{
     if(currentNumber.length <10){
         currentNumber += number;
-        updateDisplay(currentNumber);
+        display = display + number;
+        console.log(display);
+        updateDisplay(display);
     }
    
 }
@@ -16,14 +19,34 @@ const updateDisplay = (value) =>{
     output.textContent = value;
 }
 
-const setOperation = (op) =>{
-    if (currenNumber = '')return ;
-    operation = op;
-    previousNumber = currentNumber;
-    currentNumber = '';
-    updateDisplay(operation);
+// const setOperation = (op) =>{
+//     if (currenNumber = '')return ;
+//     if(previousNumber !== ''){
+//         calculate();
+//     }
+//     operation = op;
+//     console.log(display);
+//     display = display + operation;
+//     previousNumber = currentNumber;
+//     currentNumber = '';
+//     updateDisplay(display);
 
-}
+// }
+const setOperation = (op) => {
+    if (currentNumber === '') return;
+    
+    if (previousNumber !== '') {
+        calculate(); 
+    }
+
+    operation = op;
+    previousNumber = currentNumber; 
+    currentNumber = ''; 
+    
+    display = previousNumber + operation; 
+    console.log(display);
+    updateDisplay(display);
+};
 const calculate = () =>{
     let result;
     const prev = parseFloat(previousNumber);
@@ -50,7 +73,7 @@ const calculate = () =>{
     }
     updateDisplay(result);
     previousNumber = '';
-    currentNumber = '';
+    currentNumber = result;
 }
 
 const clearDisplay = () =>{
@@ -58,6 +81,8 @@ const clearDisplay = () =>{
     currentNumber = '';
     previousNumber = '';
     operation = null;
+    result = '';
+    display = '';
     updateDisplay('');
 }
 
